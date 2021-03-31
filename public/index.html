@@ -1,89 +1,108 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleria</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />    
+    <!-- Estilos da Aplicação -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+    <a href="" class="header-brand">Galleria</a>
+    <nav class="header-navbar">
+        <ul>
+            <li>
+                <a href="#" class="active">Home</a>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.3.1/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+            </li>
+            <li>
+                <a href="#" >Photos</a>
+            </li>
+            <li>
+                <a href="#" >Services</a>
+            </li>
+            <li>
+                <a href="#" >About</a>
+            </li>
+            <li>
+                <a href="#" >Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="header-social-media">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>            
+            <li>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>           
+            <li>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>            
+            <li>
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </li>           
+        </ul>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    </header>
+    <main>
+        <div class="gallery">
+            <div class="gallery-card" id="card-1">
+                <h2 class="gallery-card-title">Animais</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-2">
+                <h2 class="gallery-card-title">Arquitetura</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-3">
+                <h2 class="gallery-card-title">Cidades</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-4">
+                <h2 class="gallery-card-title">Decorações</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-5">
+                <h2 class="gallery-card-title">Esportes</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-6">
+                <h2 class="gallery-card-title">Natureza</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-7">
+                <h2 class="gallery-card-title">Paisagem</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-8">
+                <h2 class="gallery-card-title">Pessoas</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+            <div class="gallery-card" id="card-9">
+                <h2 class="gallery-card-title">Refeições</h2>
+                <a href="" class="gallery-card-btn">Mais fotos</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><span>Galleria</span> &copy; 2021</p>
+    </footer>
+</body>
 </html>
